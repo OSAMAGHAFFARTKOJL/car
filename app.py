@@ -3,15 +3,15 @@ import streamlit as st
 import os
 from openai import OpenAI
 
-# Set the environment variable (done within Google Colab, or set externally)
-os.environ['OPENAI_API_KEY'] = 'sk-proj-HaH5ehD0VL9WFxuNgtECT3BlbkFJunNmvlQzK1l2AgzsIbiz'
+api_key = st.secrets["openai"]["api_key"]
+
 
 try:
     results = run_flow_from_json("/content/CSA Robot.json", input_value="Hello, World!")
     st.write("Flow Results:", results)
 except:
     # Retrieve the API key from environment variables
-    api_key = os.getenv('OPENAI_API_KEY')
+
     if not api_key:
         raise ValueError("API key not found. Please set the OPENAI_API_KEY environment variable.")
 
@@ -35,4 +35,4 @@ except:
     user_input = st.text_input("Enter your question:")
     if st.button("Submit"):
         response = generate_response(user_input)
-        st.write( response)
+        st.write(response)
