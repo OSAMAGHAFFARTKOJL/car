@@ -4,7 +4,7 @@ import os
 from openai import OpenAI
 
 # Set the environment variable (done within Google Colab, or set externally)
-os.environ['OPENAI_API_KEY'] = 'sk-proj-ni3XsWrEQ3wLYZ7VR0KBT3BlbkFJEjV8Tn0q3dRddOD6ufRY'
+os.environ['OPENAI_API_KEY'] = 'sk-proj-HaH5ehD0VL9WFxuNgtECT3BlbkFJunNmvlQzK1l2AgzsIbiz'
 
 try:
     results = run_flow_from_json("/content/CSA Robot.json", input_value="Hello, World!")
